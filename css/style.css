@@ -1,0 +1,90 @@
+.photo {
+  width: 100%; /* Obraz zajmie 100% szerokości kontenera */
+  max-width: 297mm; /* Maksymalna szerokość (pozioma) A4 */
+  max-height: 210mm; /* Maksymalna wysokość (pozioma) A4 */
+  object-fit: cover; /* Dopasowanie obrazu */
+  border: 1px solid #ddd; /* Dodatkowa ramka dla zdjęcia */
+  cursor: pointer; /* Wskaźnik jako ręka na hover */
+}
+.photo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.modal-dialog {
+  max-width: 80%; /* For larger screens, the modal will occupy 80% of the width */
+}
+
+.modal-dialog.modal-lg {
+  max-width: 90%; /* You can adjust this value for larger modals */
+}
+
+.modal-dialog {
+  max-width: 80%; /* For larger screens, the modal will occupy 80% of the width */
+}
+
+.modal-dialog.modal-lg {
+  max-width: 90%; /* You can adjust this value for larger modals */
+}
+
+.modal-body {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-head {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#modalImage {
+  max-width: 100%;
+  max-height: 80vh; /* Adjust max-height to avoid overflow on mobile */
+  object-fit: contain;
+}
+
+/* Ensure the modal is centered on mobile */
+@media (max-width: 767px) {
+  .modal-dialog {
+    margin: 30px auto; /* Ensure modal has margin and is centered on small screens */
+    width: 100%; /* Use full width on mobile */
+    max-width: none; /* Remove max-width for mobile */
+  }
+
+  .modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+.back-to-top i {
+  font-size: 20px;
+}
