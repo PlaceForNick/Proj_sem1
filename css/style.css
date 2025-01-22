@@ -88,3 +88,19 @@
 .back-to-top i {
   font-size: 20px;
 }
+
+/* Styling for videos to match photo styles */
+.video {
+  width: 100%; /* Video occupies 100% width of its container */
+  max-width: 297mm; /* Same max-width as photos (A4) */
+  max-height: 210mm; /* Same max-height as photos (A4) */
+  object-fit: cover; /* Ensures video fits properly */
+  border: 1px solid #ddd; /* Thin white border */
+  border-radius: 0; /* Ensures non-rounded corners */
+  cursor: pointer; /* Pointer on hover */
+}
+
+.video-container {
+  text-align: center; /* Center-align the video container */
+  margin-bottom: 20px; /* Add spacing below each video */
+}
