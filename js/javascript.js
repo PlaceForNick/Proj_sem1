@@ -1,71 +1,101 @@
-# Load the JavaScript file content and adapt it to render videos dynamically
-
-file_path = '/mnt/data/javascript.js'
-
-# Load the content for modification
-with open(file_path, 'r') as js_file:
-    js_content = js_file.read()
-
-# Adapt JavaScript code to handle video rendering along with photos
-updated_js_content = """
-// Sample media data (photos and videos)
-const photos = [
-  { title: 'Zdjęcie 1', url: 'img/photo1.jpg', type: 'photo' },
-  { title: 'Zdjęcie 2', url: 'img/photo2.jpg', type: 'photo' },
+// Array of photo objects
+const photos1 = [
+  { src: "img/graf/graf1.jpg", alt: "Zdjęcie 1" },
 ];
 
-const videos = [
-  { title: 'Film 1', url: 'videos/video1.mp4', type: 'video' },
-  { title: 'Film 2', url: 'videos/video2.mp4', type: 'video' },
+const photos2 = [
+  { src: "img/inst/inst1.jpg", alt: "Zdjęcie 1" },
+  { src: "img/inst/inst2.jpg", alt: "Zdjęcie 2" },
+  { src: "img/inst/inst3.jpg", alt: "Zdjęcie 3" },
+  { src: "img/inst/inst4.jpg", alt: "Zdjęcie 4" },
+  { src: "img/inst/inst5.jpg", alt: "Zdjęcie 5" },
+  { src: "img/inst/inst6.jpg", alt: "Zdjęcie 6" },
+  { src: "img/inst/inst7.jpg", alt: "Zdjęcie 7" },
+  { src: "img/inst/inst8.jpg", alt: "Zdjęcie 8" },
+  { src: "img/inst/inst9.jpg", alt: "Zdjęcie 9" },
+  { src: "img/inst/inst10.jpg", alt: "Zdjęcie 10" },
+  { src: "img/inst/inst11.jpg", alt: "Zdjęcie 11" },
+  { src: "img/inst/inst12.jpg", alt: "Zdjęcie 12" },
 ];
 
-// Function to render photo gallery
-function renderPhotoGallery() {
-  const photoGallery = document.getElementById('photo-gallery_graf');
+// Function to create photo gallery
+function createPhotoGallery(photos, galleryContainerId) {
+  const galleryContainer = document.getElementById(galleryContainerId);
+
+  if (!galleryContainer) {
+    console.error(`Container with ID '${galleryContainerId}' not found.`);
+    return;
+  }
+
+  // Clear existing content in case it's called multiple times
+  galleryContainer.innerHTML = "";
+
+  // Loop through the photos array and create HTML elements
   photos.forEach((photo) => {
-    const photoDiv = document.createElement('div');
-    photoDiv.className = 'col-12 col-md-6 col-lg-4';
-    photoDiv.innerHTML = `
-      <div class="card">
-        <img src="${photo.url}" class="card-img-top" alt="${photo.title}" />
-        <div class="card-body">
-          <h5 class="card-title">${photo.title}</h5>
-        </div>
-      </div>`;
-    photoGallery.appendChild(photoDiv);
+    const colDiv = document.createElement("div");
+    colDiv.classList.add("col-12", "col-sm-6", "col-lg-4", "photo-container");
+
+    const img = document.createElement("img");
+    img.src = photo.src;
+    img.alt = photo.alt;
+    img.title = photo.alt;
+    img.classList.add("photo", "img-fluid");
+    img.setAttribute("data-bs-toggle", "modal");
+    img.setAttribute("data-bs-target", "#photoModal");
+    img.onclick = () => showImage(photo.src, photo.alt);
+
+    colDiv.appendChild(img);
+    galleryContainer.appendChild(colDiv);
   });
 }
 
-// Function to render video gallery
-function renderVideoGallery() {
-  const videoGallery = document.getElementById('video-gallery_inst');
-  videos.forEach((video) => {
-    const videoDiv = document.createElement('div');
-    videoDiv.className = 'col-12 col-md-6 col-lg-4';
-    videoDiv.innerHTML = `
-      <div class="card">
-        <video controls class="card-img-top">
-          <source src="${video.url}" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div class="card-body">
-          <h5 class="card-title">${video.title}</h5>
-        </div>
-      </div>`;
-    videoGallery.appendChild(videoDiv);
-  });
+// Function to show the image in a modal
+function showImage(imageSrc, imageAlt) {
+  const modalImage = document.getElementById("modalImage");
+  const modalTitle = document.getElementById("modalTitle");
+
+  if (modalImage && modalTitle) {
+    modalImage.src = imageSrc;
+    modalTitle.textContent = imageAlt;
+  } else {
+    console.error("Modal elements not found.");
+  }
 }
 
-// Initialize galleries
-document.addEventListener('DOMContentLoaded', () => {
-  renderPhotoGallery();
-  renderVideoGallery();
+// Ensure the galleries are created when the page is fully loaded
+document.addEventListener("DOMContentLoaded", () => {
+  createPhotoGallery(photos1, "photo-gallery_graf");
+  createPhotoGallery(photos2, "photo-gallery_inst");
 });
-"""
 
-# Save the updated JavaScript file
-with open(file_path, 'w') as js_file:
-    js_file.write(updated_js_content)
+// New video data
+const newVideos = [
+{ title: "", url: "img/inst/film1.mp4" },
+{ title: "", url: "img/inst/film2.mp4"  },
+{ title: "", url: "img/inst/film3.mp4"  },
+];
 
-# Verify completion
-"JavaScript file has been successfully updated to render videos alongside photos."
+// Function to render new videos in the specified section
+function renderNewVideos() {
+const videoGallery = document.getElementById("video-gallery_inst");
+if (!videoGallery) return;
+
+newVideos.forEach((video) => {
+  const videoDiv = document.createElement("div");
+  videoDiv.className = "col-12 col-md-6 col-lg-4";
+  videoDiv.innerHTML = `
+	<div class="card">
+	  <video controls class="card-img-top">
+		<source src="${video.url}" type="video/mp4" />
+		Your browser does not support the video tag.
+	  </video>
+	  <div class="card-body">
+		<h5 class="card-title">${video.title}</h5>
+	  </div>
+	</div>`;
+  videoGallery.appendChild(videoDiv);
+});
+}
+
+// Initialize video rendering on page load
+document.addEventListener("DOMContentLoaded", renderNewVideos);
