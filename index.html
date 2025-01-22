@@ -13,7 +13,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
       rel="stylesheet"
     />
-    <script src="js/javascript.js"></script>
+    <script src="js/javascript.js" defer></script>
     <link rel="icon" type="image/png" href="img/favicon.png" sizes="128x128" />
   </head>
   <body>
@@ -35,27 +35,26 @@
         <h2 class="text fw-semibold">Zdjęcia instalacji</h2>
         <div id="photo-gallery_inst" class="row g-4"></div>
       </section>
-	  
-	  <!-- Sekcja Instalacja przestrzenna 2 -->
+
+      <!-- Sekcja Instalacja przestrzenna 2 -->
       <section>
         <h2 class="text fw-semibold">Filmy z instalacji</h2>
-        <div id="photo-gallery_inst2" class="row g-4"></div>
+        <div id="video-gallery_inst" class="row g-4"></div>
       </section>
-	  
     </div>
 
-    <!-- Modal -->
+    <!-- Modal for Photos and Videos -->
     <div
       class="modal fade"
-      id="photoModal"
+      id="mediaModal"
       tabindex="-1"
-      aria-labelledby="photoModalLabel"
+      aria-labelledby="mediaModalLabel"
       aria-hidden="true"
     >
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 id="modalTitle" class="modal-title">Tytuł zdjęcia</h4>
+            <h4 id="modalTitle" class="modal-title">Tytuł</h4>
             <button
               type="button"
               class="btn-close"
@@ -63,40 +62,11 @@
               aria-label="Zamknij"
             ></button>
           </div>
-          <div class="modal-body text-center">
-            <img
-              id="modalImage"
-              src=""
-              alt="Zdjęcie w pełnym rozmiarze"
-              class="img-fluid"
-            />
-          </div>
+          <div class="modal-body text-center" id="modalBody"></div>
         </div>
       </div>
     </div>
-	
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 id="modalTitle2" class="modal-title">Tytuł filmu</h4>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Zamknij"
-            ></button>
-          </div>
-          <div class="modal-body text-center">
-            <video
-              id="modalImage"
-              src=""
-              alt=""
-              class="video-fluid"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
+
     <!-- Back to Top Button -->
     <div class="back-to-top" id="backToTop">
       <i class="fas fa-arrow-up"></i>
