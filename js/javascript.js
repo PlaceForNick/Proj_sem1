@@ -18,6 +18,12 @@ const photos2 = [
   { src: "img/inst/inst12.jpg", alt: "Zdjęcie 12" },
 ];
 
+const movies1 = [
+  { src: "img/inst/film1.mp4", alt: "Film 1"},
+  { src: "img/inst/film2.mp4", alt: "Film 2"},
+  { src: "img/inst/film3.mp4", alt: "Film 3"},
+];
+
 // Function to create photo gallery
 function createPhotoGallery(photos, galleryContainerId) {
   const galleryContainer = document.getElementById(galleryContainerId);
@@ -66,4 +72,5 @@ function showImage(imageSrc, imageAlt) {
 document.addEventListener("DOMContentLoaded", () => {
   createPhotoGallery(photos1, "photo-gallery_graf");
   createPhotoGallery(photos2, "photo-gallery_inst");
+  createPhotoGallery(photos3, "photo-gallery_inst2");
 });

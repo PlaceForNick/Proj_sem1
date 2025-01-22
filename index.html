@@ -19,7 +19,7 @@
   <body>
     <div class="container my-5">
       <header class="text-center mb-5" id="top">
-        <h1 class="fw-bold">Elementy Projektowe - Proces Twórczy</h1>
+        <h1 class="fw-bold">Elementy Projektowania - dodatkowe materiały</h1>
         <hr class="my-4" />
       </header>
 
@@ -35,6 +35,13 @@
         <h2 class="text fw-semibold">Zdjęcia instalacji</h2>
         <div id="photo-gallery_inst" class="row g-4"></div>
       </section>
+	  
+	  <!-- Sekcja Instalacja przestrzenna 2 -->
+      <section>
+        <h2 class="text fw-semibold">Filmy z instalacji</h2>
+        <div id="photo-gallery_inst2" class="row g-4"></div>
+      </section>
+	  
     </div>
 
     <!-- Modal -->
@@ -67,7 +74,29 @@
         </div>
       </div>
     </div>
-
+	
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 id="modalTitle2" class="modal-title">Tytuł filmu</h4>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Zamknij"
+            ></button>
+          </div>
+          <div class="modal-body text-center">
+            <video
+              id="modalImage"
+              src=""
+              alt=""
+              class="video-fluid"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Back to Top Button -->
     <div class="back-to-top" id="backToTop">
       <i class="fas fa-arrow-up"></i>
