@@ -1,22 +1,21 @@
 // Array of photo objects
 const photos1 = [
-  { src: "img/graf/graf_1.jpg", alt: "Zdjęcie 1" },
-  { src: "img/graf/graf_2.jpg", alt: "Zdjęcie 2" },
-  { src: "img/graf/graf_3.jpg", alt: "Zdjęcie 3" },
-  { src: "img/graf/graf_4.jpg", alt: "Zdjęcie 4" },
+  { src: "img/graf/graf1.jpg", alt: "Zdjęcie 1" },
 ];
 
 const photos2 = [
-  { src: "img/inst/inst_1.jpg", alt: "Zdjęcie 1" },
-  { src: "img/inst/inst_2.jpg", alt: "Zdjęcie 2" },
-  { src: "img/inst/inst_3.jpg", alt: "Zdjęcie 3" },
-  { src: "img/inst/inst_4.jpg", alt: "Zdjęcie 4" },
-  { src: "img/inst/inst_5.jpg", alt: "Zdjęcie 5" },
-  { src: "img/inst/inst_6.jpg", alt: "Zdjęcie 6" },
-  { src: "img/inst/inst_7.jpg", alt: "Zdjęcie 7" },
-  { src: "img/inst/inst_8.jpg", alt: "Zdjęcie 8" },
-  { src: "img/inst/inst_9.jpg", alt: "Zdjęcie 9" },
-  { src: "img/inst/inst_10.jpg", alt: "Zdjęcie 10" },
+  { src: "img/inst/inst1.jpg", alt: "Zdjęcie 1" },
+  { src: "img/inst/inst2.jpg", alt: "Zdjęcie 2" },
+  { src: "img/inst/inst3.jpg", alt: "Zdjęcie 3" },
+  { src: "img/inst/inst4.jpg", alt: "Zdjęcie 4" },
+  { src: "img/inst/inst5.jpg", alt: "Zdjęcie 5" },
+  { src: "img/inst/inst6.jpg", alt: "Zdjęcie 6" },
+  { src: "img/inst/inst7.jpg", alt: "Zdjęcie 7" },
+  { src: "img/inst/inst8.jpg", alt: "Zdjęcie 8" },
+  { src: "img/inst/inst9.jpg", alt: "Zdjęcie 9" },
+  { src: "img/inst/inst10.jpg", alt: "Zdjęcie 10" },
+  { src: "img/inst/inst11.jpg", alt: "Zdjęcie 11" },
+  { src: "img/inst/inst12.jpg", alt: "Zdjęcie 12" },
 ];
 
 // Function to create photo gallery
